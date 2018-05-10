@@ -9,7 +9,6 @@ const ext = {
     return Object.assign(this.client.raw(isNull(expression, value)), {
       as(name) {
         this.sql += ` AS ${name}`;
-
         return this;
       }
     });
