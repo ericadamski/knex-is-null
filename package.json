@@ -1,6 +1,6 @@
 {
   "name": "knex-is-null",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "⚙️ A Knex.js _plugin_ to add ISNULL statement support",
   "main": "index.js",
   "author": "Eric Adamski <er.adamski@gmail.com>",
