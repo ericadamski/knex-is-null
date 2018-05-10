@@ -1,8 +1,8 @@
-const Knex = require("knex");
+const Knex = require('knex');
 const Client = Knex.Client.prototype;
-const QueryBuilder = require("knex/lib/query/builder");
+const QueryBuilder = require('knex/lib/query/builder');
 
-const isNull = require("./src/is-null");
+const isNull = require('./src/is-null');
 
 const ext = {
   isNull(expression, value) {
