@@ -12,6 +12,12 @@ describe("K.isNull", () => {
   it("should be able to handle a single isNull statement", () => {
     const expectedResult = `ISNULL(Slices of cake,10)`;
 
+    const result = K.queryBuilder().isNull("Slices of cake", 10);
+  });
+
+  it("should be able to handle a single isNull statement", () => {
+    const expectedResult = `ISNULL(Slices of cake,10)`;
+
     const result = K.queryBuilder()
       .isNull("Slices of cake", 10)
       .toQuery();
@@ -32,22 +38,32 @@ describe("K.isNull", () => {
     expect(result).toEqual(expectedResult);
   });
 
-<<<<<<< HEAD
   it("should be able to alias statements", () => {
     const expectedResult = `ISNULL(Slices of cake,10) AS CAKEEEEEEEEEE`;
 
     const result = K.queryBuilder()
       .isNull("Slices of cake", 10)
-      .as("CAKEEEEEEEEEE")
-=======
-  it('should be able to alias statements', () => {
+      .as("CAKEEEEEEEEEE");
+  });
+
+  it("should be able to alias statements", () => {
     const expectedResult = `ISNULL(S.O.Cake,10) AS CAKEEEEEEEEEE`;
 
     const result = K.queryBuilder()
-      .isNull('S.O.Cake', 10)
-      .as('CAKEEEEEEEEEE')
->>>>>>> 0f1e368... as returns self reference :selfie:
+      .isNull("S.O.Cake", 10)
+      .as("CAKEEEEEEEEEE")
+
       .toQuery();
+
+    expect(result).toEqual(expectedResult);
+  });
+
+  it("should be able to alias statements", () => {
+    const expectedResult = `ISNULL(Slices of cake,10) AS CAKEEEEEEEEEE`;
+
+    const result = K.queryBuilder()
+      .isNull("Slices of cake", 10)
+      .as("CAKEEEEEEEEEE");
 
     expect(result).toEqual(expectedResult);
   });
